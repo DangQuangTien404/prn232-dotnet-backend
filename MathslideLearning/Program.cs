@@ -30,8 +30,6 @@ var connectionString =
     $"password={Environment.GetEnvironmentVariable("MYSQL_PASSWORD")};" +
     $"SslMode={Environment.GetEnvironmentVariable("MYSQL_SSLMODE")};";
 
-Console.WriteLine("Connection string (debug): " + connectionString);
-
 builder.Services.AddDbContext<MathslideLearningDbContext>(options =>
     options.UseMySql(connectionString, new MySqlServerVersion(new Version(8, 0, 36))));
 
